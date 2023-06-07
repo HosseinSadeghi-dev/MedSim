@@ -29,6 +29,9 @@ dependencies:
   '@angular/router':
     specifier: ^16.0.0
     version: 16.0.0(@angular/common@16.0.0)(@angular/core@16.0.0)(@angular/platform-browser@16.0.0)(rxjs@7.8.0)
+  '@angular/service-worker':
+    specifier: ^16.0.0
+    version: 16.0.0(@angular/common@16.0.0)(@angular/core@16.0.0)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.0
@@ -42,7 +45,7 @@ dependencies:
 devDependencies:
   '@angular-devkit/build-angular':
     specifier: ^16.0.5
-    version: 16.0.5(@angular/compiler-cli@16.0.0)(@types/node@20.2.5)(karma@6.4.0)(ts-node@10.9.1)(typescript@5.0.2)
+    version: 16.0.5(@angular/compiler-cli@16.0.0)(@angular/service-worker@16.0.0)(@types/node@20.2.5)(karma@6.4.0)(ts-node@10.9.1)(typescript@5.0.2)
   '@angular/cli':
     specifier: ~16.0.5
     version: 16.0.5
@@ -94,7 +97,7 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular@16.0.5(@angular/compiler-cli@16.0.0)(@types/node@20.2.5)(karma@6.4.0)(ts-node@10.9.1)(typescript@5.0.2):
+  /@angular-devkit/build-angular@16.0.5(@angular/compiler-cli@16.0.0)(@angular/service-worker@16.0.0)(@types/node@20.2.5)(karma@6.4.0)(ts-node@10.9.1)(typescript@5.0.2):
     resolution: {integrity: sha512-I4B3aYv+rtvGwpwaIE2p+Uyor52UmYo93slXprhMKCW6FfYYWUScyVkufKNfdoEGO/cLRaSTo7gYkovC7bPdaA==}
     engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -134,6 +137,7 @@ packages:
       '@angular-devkit/build-webpack': 0.1600.5(chokidar@3.5.3)(webpack-dev-server@4.13.2)(webpack@5.80.0)
       '@angular-devkit/core': 16.0.5(chokidar@3.5.3)
       '@angular/compiler-cli': 16.0.0(@angular/compiler@16.0.0)(typescript@5.0.2)
+      '@angular/service-worker': 16.0.0(@angular/common@16.0.0)(@angular/core@16.0.0)
       '@babel/core': 7.21.4
       '@babel/generator': 7.21.4
       '@babel/helper-annotate-as-pure': 7.18.6
@@ -311,7 +315,6 @@ packages:
       '@angular/core': 16.0.0(rxjs@7.8.0)(zone.js@0.13.0)
       rxjs: 7.8.0
       tslib: 2.3.0
-    dev: false
 
   /@angular/compiler-cli@16.0.0(@angular/compiler@16.0.0)(typescript@5.0.2):
     resolution: {integrity: sha512-oyJzxiTHxziv7mD0QuA7K6tpDoL6YNGPkquKjeJjNVZvUrodGsvJ8xHO4ydmjK3nMu2ET1YarsdI8bRp4vp/7w==}
@@ -422,6 +425,18 @@ packages:
       rxjs: 7.8.0
       tslib: 2.3.0
     dev: false
+
+  /@angular/service-worker@16.0.0(@angular/common@16.0.0)(@angular/core@16.0.0):
+    resolution: {integrity: sha512-uVuxPDeKHd3x8QRcvA/8nfLoBZrKu844WGmeZYtkOpahsyaT/6xtBjqS2Rx+0X6RHVYR21nVT6V54R6tZa1eFA==}
+    engines: {node: ^16.14.0 || >=18.10.0}
+    hasBin: true
+    peerDependencies:
+      '@angular/common': 16.0.0
+      '@angular/core': 16.0.0
+    dependencies:
+      '@angular/common': 16.0.0(@angular/core@16.0.0)(rxjs@7.8.0)
+      '@angular/core': 16.0.0(rxjs@7.8.0)(zone.js@0.13.0)
+      tslib: 2.5.0
 
   /@assemblyscript/loader@0.10.1:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
@@ -6582,7 +6597,6 @@ packages:
 
   /tslib@2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
-    dev: true
 
   /tuf-js@1.1.6:
     resolution: {integrity: sha512-CXwFVIsXGbVY4vFiWF7TJKWmlKJAT8TWkH4RmiohJRcDJInix++F0dznDmoVbtJNzZ8yLprKUG4YrDIhv3nBMg==}
